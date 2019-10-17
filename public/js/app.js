@@ -13,7 +13,7 @@ formObject.addEventListener('submit',(e)=>{
     const locate = where.value
     message1.textContent = 'Loading...'
     message2.textContent = ''
-    fetch('http://localhost:3000/weather?address='+locate).then((response)=>{
+    fetch('/weather?address='+locate).then((response)=>{
     
     response.json().then((data)=>{
         if(data.error){
