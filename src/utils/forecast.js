@@ -4,9 +4,9 @@ const request = require('request')
 
 const forecast = (latitude,longitude,callback)=>{
 
-    url = 'https://api.darksky.net/forecast/7466f610181619624f083aa7cf3ca569/'+ latitude +','+ longitude +''
+    url = 'https://api.darksky.net/forecast/7466f610181619624f083aa7cf3ca569/3.4,6.45'
     request({url,json:true},(error,{body})=>{
-
+        
         if(error){
             callback('No internet access',undefined)
         }
@@ -19,7 +19,8 @@ const forecast = (latitude,longitude,callback)=>{
                 temprature:body.currently.temperature,
                 probability:body.currently.precipProbability,
                 location: body.timezone,
-                summary:body.daily.data[0].summary
+                summary:body.currently.summary,
+               
             })
 
         }

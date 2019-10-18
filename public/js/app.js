@@ -21,10 +21,10 @@ formObject.addEventListener('submit',(e)=>{
         }
         else{
            
-            //console.log(data.forecast.summary)
+            //console.log(data)
             //console.log(data.location)
-             message1.textContent = data.location
-             message2.textContent = data.forecast.summary
+             message1.textContent = data.place
+             message2.textContent = data.summary+'.It is '+data.temprature+' decree celcius.There is a '+data.probability+' percent chance to rain'
         }
         
         

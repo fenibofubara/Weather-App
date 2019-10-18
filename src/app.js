@@ -59,8 +59,9 @@ app.get('/h',(req,res)=>{
                  error:error
              })
          }
-    
-    forecast(latitude,longitude,(error,forecastData)=>{
+ 
+        
+    forecast(latitude,longitude,(error,{temprature,probability,location,summary,place}={})=>{
         if(error){
             return res.send({
                 
@@ -70,9 +71,14 @@ app.get('/h',(req,res)=>{
        
         res.send({
             
-            forecast:forecastData,
-            address:req.query.address,
-            location:place
+            // forecast:forecastData,
+            // address:req.query.address,
+            // location:place
+            place:place,
+            temprature:temprature,
+            probability:probability,
+            location:location,
+            summary:summary
 
         })
 
